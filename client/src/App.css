@@ -1,0 +1,167 @@
+.app {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.app select {
+  display: block;
+}
+
+.app .rotate {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.app > .sidebar {
+  flex: 1;
+  max-width: 300px;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  border-right: 1px solid #e0e0e0;
+}
+
+.app > .sidebar .new-channel {
+  margin: 1rem auto;
+}
+
+.app > .sidebar > .card {
+  margin: 0;
+}
+
+.app > .sidebar > .card .status {
+  align-items: center;
+  display: flex;
+}
+
+.app > .sidebar > .collection {
+  margin-top: 0;
+  border: none;
+}
+
+.app > .sidebar > .collection > li.collection-header {
+  padding-left: 30px;
+  padding-bottom: 0;
+  padding-right: 30px;
+}
+
+.app > .sidebar > .collection > li.collection-item {
+  cursor: pointer;
+  font-weight: 300;
+  position: relative;
+  padding: 0 30px;
+  line-height: 2rem;
+  font-size: small;
+  display: flex;
+  align-items: center;
+}
+
+.app > .sidebar > .collection > li.collection-item:hover {
+  background: #a9a9a9;
+}
+
+.app > .sidebar > .collection > li.collection-item.active {
+  background: #5a7a94;
+  font-weight: 600;
+}
+
+.app > .sidebar > .collection > li.collection-item > i.message {
+  position: absolute;
+  padding-top: 5px;
+  left: 10px;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.app > .sidebar > .collection.users > li.collection-item > i {
+  font-size: smaller;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.app > .sidebar > .collection.users > li.collection-item > i.right {
+  position: static;
+  padding-top: 0;
+  transform: none;
+}
+
+.app > .dialogue {
+  flex: 1;
+  padding: 25px;
+}
+
+.app > .dialogue > .chat {
+  background: #eee;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+}
+
+.app > .dialogue > .chat > .chat-header {
+  background: #26a69a;
+  color: white;
+  line-height: 3rem;
+  padding: 0 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.app > .dialogue > .chat > .messages {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.app > .dialogue > .chat > .messages > .message {
+  margin: 25px;
+}
+
+.app > .dialogue > .chat > .messages > .message > .text {
+  background: white;
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+  border-radius: 7px;
+}
+
+.app > .dialogue > .chat > .messages > .message > .header {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.app > .dialogue > .chat > .messages > .message > .header > .time {
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+.app > .dialogue > .chat > .messages > .message > .header > .sender {
+  font-weight: bold;
+}
+
+.app > .dialogue > .chat > .text-input {
+  border-top: 1px solid white;
+  padding: 25px;
+}
+
+.app > .dialogue > .chat > .text-input > textarea {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
